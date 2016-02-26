@@ -10,8 +10,6 @@ import java.util.Set;
  * @author Jari Van Melckebeke
  */
 public class Output {
-
-<<<<<<< HEAD
     /**
      * Deze methode zorgt ervoor dat TERESA kan spreken
      * @param str de text die ze moet zeggen
@@ -21,7 +19,6 @@ public class Output {
 
         MaryInterface marytts = new LocalMaryInterface();
         Set<String> voices = marytts.getAvailableVoices();
-=======
     public static void speak(String str) throws Exception {
 
         MaryInterface marytts = new LocalMaryInterface();
@@ -29,7 +26,6 @@ public class Output {
         Set<String> voices = marytts.getAvailableVoices();
         System.out.println(voices.toString());
         System.out.println(marytts.getAvailableVoices());
->>>>>>> origin/master
         AudioInputStream audio = marytts.generateAudio(str);
         AudioPlayer player = new AudioPlayer(audio);
         player.start();
