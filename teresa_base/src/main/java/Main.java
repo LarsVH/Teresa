@@ -15,8 +15,10 @@ public class Main {
             Output.speak("yes, i am listening");
             command = input.getCommand(true);
         }
-        String command = input.getCommand();
-        if (command.contains("TERESA")) Output.speak(Action.doAction(command.substring(7)));
-        else Output.speak(Action.doAction(command));
+        do {
+            if (command.contains("TERESA")) Output.speak(Action.doAction(command));
+            else Output.speak(Action.doAction(command));
+            command = input.getCommand(true);
+        } while (true);
     }
 }

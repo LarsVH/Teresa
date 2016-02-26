@@ -1,0 +1,361 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 889d756635f09643c6afc3d13fcc3a076b490539)
++++ .idea/workspace.xml	(revision )
+@@ -2,10 +2,7 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="d7601fcf-4ea9-4cac-9956-d0d37b6dbe16" name="Default" comment="snapshot-2.0">
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Action.java" afterPath="$PROJECT_DIR$/src/main/java/Action.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Input.java" afterPath="$PROJECT_DIR$/src/main/java/Input.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Output.java" afterPath="$PROJECT_DIR$/src/main/java/Output.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+     </list>
+     <ignored path="teresa_base.iws" />
+     <ignored path=".idea/workspace.xml" />
+@@ -31,7 +28,7 @@
+       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/pom.xml">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="-40.925926">
++            <state vertical-scroll-proportion="0.0">
+               <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+               <folding />
+             </state>
+@@ -42,7 +39,7 @@
+         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+           <provider selected="true" editor-type-id="text-editor">
+             <state vertical-scroll-proportion="0.0">
+-              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
++              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+               <folding />
+             </state>
+           </provider>
+@@ -52,7 +49,7 @@
+         <entry file="file://$PROJECT_DIR$/src/main/java/Input.java">
+           <provider selected="true" editor-type-id="text-editor">
+             <state vertical-scroll-proportion="0.0">
+-              <caret line="39" column="59" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
++              <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+               <folding />
+             </state>
+           </provider>
+@@ -61,8 +58,8 @@
+       <file leaf-file-name="Action.java" pinned="false" current-in-tab="true">
+         <entry file="file://$PROJECT_DIR$/src/main/java/Action.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="0.48407644">
+-              <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
++            <state vertical-scroll-proportion="1.2289916">
++              <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+               <folding>
+                 <element signature="imports" expanded="true" />
+               </folding>
+@@ -74,7 +71,7 @@
+         <entry file="file://$PROJECT_DIR$/src/main/java/Output.java">
+           <provider selected="true" editor-type-id="text-editor">
+             <state vertical-scroll-proportion="0.0">
+-              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
++              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+               <folding>
+                 <element signature="imports" expanded="true" />
+               </folding>
+@@ -87,9 +84,7 @@
+           <provider selected="true" editor-type-id="text-editor">
+             <state vertical-scroll-proportion="0.0">
+               <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+-              <folding>
+-                <element signature="imports" expanded="false" />
+-              </folding>
++              <folding />
+             </state>
+           </provider>
+         </entry>
+@@ -111,7 +106,6 @@
+       </list>
+     </option>
+     <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
+-    <option name="UPDATE_TYPE" value="REBASE" />
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+   </component>
+   <component name="GradleLocalSettings">
+@@ -370,6 +364,8 @@
+       <foldersAlwaysOnTop value="true" />
+     </navigator>
+     <panes>
++      <pane id="Scope" />
++      <pane id="PackagesPane" />
+       <pane id="ProjectPane">
+         <subPane>
+           <PATH>
+@@ -448,13 +444,11 @@
+           </PATH>
+         </subPane>
+       </pane>
+-      <pane id="PackagesPane" />
+-      <pane id="Scope" />
+       <pane id="Scratches" />
+     </panes>
+   </component>
+   <component name="PropertiesComponent">
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/voice-bits3-5.1.jar!/" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+     <property name="SearchEverywhereHistoryKey" value="downloads&#9;ACTION&#9;Maven.DownloadAllSources&#10;marytts-manifest&#9;null&#9;null&#10;.gram&#9;PSI&#9;JAVA://edu.cmu.sphinx.linguist.language.grammar.Grammar&#10;config&#9;FILE&#9;jar:///usr/lib/jvm/jdk1.8.0_73/jre/lib/resources.jar!/com/sun/org/apache/xml/internal/security/resource/config.xml" />
+     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="214" />
+     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+@@ -472,10 +466,10 @@
+     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1138" />
+     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+-    <property name="project.structure.last.edited" value="Modules" />
++    <property name="project.structure.last.edited" value="Project" />
+     <property name="project.structure.proportion" value="0.15" />
+     <property name="project.structure.side.proportion" value="0.43678162" />
+-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
++    <property name="settings.editor.selected.configurable" value="settings.github" />
+     <property name="settings.editor.splitter.proportion" value="0.2" />
+     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+   </component>
+@@ -487,6 +481,116 @@
+       <recent name="" />
+     </key>
+   </component>
++  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
++    <UpdatedFiles>
++      <FILE-GROUP>
++        <option name="myUpdateName" value="Updated from server" />
++        <option name="myStatusName" value="Changed on server" />
++        <option name="mySupportsDeletion" value="false" />
++        <option name="myCanBeAbsent" value="false" />
++        <option name="myId" value="CHANGED_ON_SERVER" />
++        <FILE-GROUP>
++          <option name="myUpdateName" value="Updated" />
++          <option name="myStatusName" value="Changed" />
++          <option name="mySupportsDeletion" value="false" />
++          <option name="myCanBeAbsent" value="false" />
++          <option name="myId" value="UPDATED" />
++        </FILE-GROUP>
++        <FILE-GROUP>
++          <option name="myUpdateName" value="Created" />
++          <option name="myStatusName" value="Created" />
++          <option name="mySupportsDeletion" value="false" />
++          <option name="myCanBeAbsent" value="false" />
++          <option name="myId" value="CREATED" />
++          <PATH vcs="Git" revision="">$PROJECT_DIR$/../README.md</PATH>
++        </FILE-GROUP>
++        <FILE-GROUP>
++          <option name="myUpdateName" value="Deleted" />
++          <option name="myStatusName" value="Deleted" />
++          <option name="mySupportsDeletion" value="false" />
++          <option name="myCanBeAbsent" value="true" />
++          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
++        </FILE-GROUP>
++        <FILE-GROUP>
++          <option name="myUpdateName" value="Restored" />
++          <option name="myStatusName" value="Will be restored" />
++          <option name="mySupportsDeletion" value="false" />
++          <option name="myCanBeAbsent" value="false" />
++          <option name="myId" value="RESTORED" />
++        </FILE-GROUP>
++      </FILE-GROUP>
++      <FILE-GROUP>
++        <option name="myUpdateName" value="Modified" />
++        <option name="myStatusName" value="Modified" />
++        <option name="mySupportsDeletion" value="false" />
++        <option name="myCanBeAbsent" value="false" />
++        <option name="myId" value="MODIFIED" />
++      </FILE-GROUP>
++      <FILE-GROUP>
++        <option name="myUpdateName" value="Skipped" />
++        <option name="myStatusName" value="Skipped" />
++        <option name="mySupportsDeletion" value="false" />
++        <option name="myCanBeAbsent" value="false" />
++        <option name="myId" value="SKIPPED" />
++      </FILE-GROUP>
++      <FILE-GROUP>
++        <option name="myUpdateName" value="Merged with conflicts" />
++        <option name="myStatusName" value="Will be merged with conflicts" />
++        <option name="mySupportsDeletion" value="false" />
++        <option name="myCanBeAbsent" value="false" />
++        <option name="myId" value="MERGED_WITH_CONFLICTS" />
++      </FILE-GROUP>
++      <FILE-GROUP>
++        <option name="myUpdateName" value="Merged with tree conflicts" />
++        <option name="myStatusName" value="Merged with tree conflicts" />
++        <option name="mySupportsDeletion" value="false" />
++        <option name="myCanBeAbsent" value="false" />
++        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
++      </FILE-GROUP>
++      <FILE-GROUP>
++        <option name="myUpdateName" value="Merged with property conflicts" />
++        <option name="myStatusName" value="Will be merged with property conflicts" />
++        <option name="mySupportsDeletion" value="false" />
++        <option name="myCanBeAbsent" value="false" />
++        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
++      </FILE-GROUP>
++      <FILE-GROUP>
++        <option name="myUpdateName" value="Merged" />
++        <option name="myStatusName" value="Will be merged" />
++        <option name="mySupportsDeletion" value="false" />
++        <option name="myCanBeAbsent" value="false" />
++        <option name="myId" value="MERGED" />
++      </FILE-GROUP>
++      <FILE-GROUP>
++        <option name="myUpdateName" value="Not in repository" />
++        <option name="myStatusName" value="Not in repository" />
++        <option name="mySupportsDeletion" value="true" />
++        <option name="myCanBeAbsent" value="false" />
++        <option name="myId" value="UNKNOWN" />
++      </FILE-GROUP>
++      <FILE-GROUP>
++        <option name="myUpdateName" value="Locally added" />
++        <option name="myStatusName" value="Locally added" />
++        <option name="mySupportsDeletion" value="false" />
++        <option name="myCanBeAbsent" value="false" />
++        <option name="myId" value="LOCALLY_ADDED" />
++      </FILE-GROUP>
++      <FILE-GROUP>
++        <option name="myUpdateName" value="Locally removed" />
++        <option name="myStatusName" value="Locally removed" />
++        <option name="mySupportsDeletion" value="false" />
++        <option name="myCanBeAbsent" value="false" />
++        <option name="myId" value="LOCALLY_REMOVED" />
++      </FILE-GROUP>
++      <FILE-GROUP>
++        <option name="myUpdateName" value="Switched" />
++        <option name="myStatusName" value="Switched" />
++        <option name="mySupportsDeletion" value="false" />
++        <option name="myCanBeAbsent" value="false" />
++        <option name="myId" value="SWITCHED" />
++      </FILE-GROUP>
++    </UpdatedFiles>
++  </component>
+   <component name="RunManager" selected="Application.Main">
+     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+@@ -903,7 +1007,7 @@
+   </component>
+   <component name="ToolWindowManager">
+     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+-    <editor active="false" />
++    <editor active="true" />
+     <layout>
+       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+@@ -915,7 +1019,6 @@
+       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892057" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+@@ -924,9 +1027,10 @@
+       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892057" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
++      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+     </layout>
+   </component>
+   <component name="Vcs.Log.UiProperties">
+@@ -963,9 +1067,7 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0">
+           <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+-          <folding>
+-            <element signature="imports" expanded="false" />
+-          </folding>
++          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -1299,7 +1401,6 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.33280253">
+           <caret line="138" column="31" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -1307,7 +1408,6 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="41.4">
+           <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -1315,50 +1415,48 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0">
+           <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+-          <folding>
+-            <element signature="imports" expanded="false" />
+-          </folding>
++          <folding />
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/pom.xml">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="-40.925926">
++        <state vertical-scroll-proportion="0.0">
+           <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/java/Output.java">
++    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0">
+-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+-          <folding>
+-            <element signature="imports" expanded="true" />
+-          </folding>
++          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
++          <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
++    <entry file="file://$PROJECT_DIR$/src/main/java/Input.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0">
+-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
++          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/java/Input.java">
++    <entry file="file://$PROJECT_DIR$/src/main/java/Output.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0">
+-          <caret line="39" column="59" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
+-          <folding />
++          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/src/main/java/Action.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.48407644">
+-          <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
++        <state vertical-scroll-proportion="1.2289916">
++          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+           <folding>
+             <element signature="imports" expanded="true" />
+           </folding>
+\ No newline at end of file

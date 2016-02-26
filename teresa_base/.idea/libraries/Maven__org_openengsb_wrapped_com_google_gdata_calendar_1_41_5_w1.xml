@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.openengsb.wrapped:com.google.gdata-calendar:1.41.5.w1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/org/openengsb/wrapped/com.google.gdata-calendar/1.41.5.w1/com.google.gdata-calendar-1.41.5.w1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.m2/repository/org/openengsb/wrapped/com.google.gdata-calendar/1.41.5.w1/com.google.gdata-calendar-1.41.5.w1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.m2/repository/org/openengsb/wrapped/com.google.gdata-calendar/1.41.5.w1/com.google.gdata-calendar-1.41.5.w1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

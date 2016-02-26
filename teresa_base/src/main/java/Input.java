@@ -20,9 +20,9 @@ public class Input {
         configuration
                 .setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
         configuration
-                .setDictionaryPath(System.getProperty("user.dir") + "/src/main/resources/5571.dic");
+                .setDictionaryPath(System.getProperty("user.dir") + "/src/main/resources/2805.dic");
         configuration
-                .setLanguageModelPath(System.getProperty("user.dir") + "/src/main/resources/5571.lm");
+                .setLanguageModelPath(System.getProperty("user.dir") + "/src/main/resources/2805.lm");
         recognizer = new LiveSpeechRecognizer(configuration);
     }
 
@@ -33,7 +33,6 @@ public class Input {
      * @throws Exception
      */
     public String getCommand(boolean isTeresaSaid) throws Exception {
-    public String getCommand() throws Exception {
         recognizer.startRecognition(true);
         SpeechResult result;
         System.out.println("ready");
@@ -43,17 +42,10 @@ public class Input {
             if (result.getHypothesis().contains("TERESA") || isTeresaSaid) {
                 recognizer.stopRecognition();
                 return result.getHypothesis();
-            if (result.getHypothesis().contains("TERESA")) {
-                if (result.getHypothesis().equals("TERESA")) {
-                    while ((result = recognizer.getResult()) != null) {
-                        return result.getHypothesis();
-                    }
-                } else {
-                    return result.getHypothesis();
-                }
             }
         }
         recognizer.stopRecognition();
         return "";
     }
 }
+

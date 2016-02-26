@@ -1,3 +1,8 @@
+import com.eclipsesource.json.JsonObject;
+import com.github.dvdme.ForecastIOLib.ForecastIO;
+import com.google.gdata.util.ServiceException;
+
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
@@ -26,7 +31,7 @@ public class Action {
         String str = null;
         try {
             System.out.println(command);
-            Method actionMethod = Class.forName("Action").getMethod(questionDatabase.get(command));
+            Method actionMethod = Class.forName("Action").getMethod(questionDatabase.get(command.toUpperCase()));
             return (String) actionMethod.invoke(returnType);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -53,6 +58,28 @@ public class Action {
             return "it is " + dateFormat.format(calendar.getTime()).substring(0, 2) + " hour " + dateFormat.format(calendar.getTime()).substring(3);
         else return "it is " + dateFormat.format(calendar.getTime()).substring(0, 2) + "\'o clock";
     }
-        return "it is " + dateFormat.format(calendar.getTime()).substring(0, 2) + " hour " + dateFormat.format(calendar.getTime()).substring(3);
+
+    /**
+     * deze methode zorgt ervoor dat TERESA sluit en 'youre welcome" zegt
+     *
+     * @return niets
+     * @throws Exception
+     */
+    public static String goodbye() throws Exception {
+        Output.speak("youre welcome");
+        System.exit(0);
+        return "";
+    }
+
+    public static String showWeather() {
+        ForecastIO forecastIO = new ForecastIO("50.8767","4.0598","78d83bb68f21b2ba86082370c54f0b54");
+        JsonObject curr = forecastIO.getHourly();
+        String output;
+        System.out.println(curr);
+        return curr.get("summary").toString();
+    }
+
+    public static String getBirthdays() throws IOException, ServiceException {
+        return "";
     }
 }
