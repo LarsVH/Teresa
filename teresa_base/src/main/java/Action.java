@@ -53,7 +53,7 @@ public class Action {
     public static String getTime() {
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
-        System.out.println(dateFormat.format(calendar.getTime()));
+        //System.out.println(dateFormat.format(calendar.getTime()));
         if (!dateFormat.format(calendar.getTime()).substring(3).equals("00"))
             return "it is " + dateFormat.format(calendar.getTime()).substring(0, 2) + " hour " + dateFormat.format(calendar.getTime()).substring(3);
         else return "it is " + dateFormat.format(calendar.getTime()).substring(0, 2) + "\'o clock";

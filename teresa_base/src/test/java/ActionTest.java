@@ -1,25 +1,25 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Date;
-import java.util.Timer;
-
-import static org.junit.Assert.*;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * @author Jari Van Melckebeke
  */
 public class ActionTest {
-    private Date date;
+    private SimpleDateFormat dateFormat;
+    private Calendar calendar;
     @Before
     public void startUp(){
-        date = new Date();
+        calendar = Calendar.getInstance();
+        dateFormat = new SimpleDateFormat("HH:mm");
     }
 
     @Test
     public void testDoAction() throws Exception {
-//        assert Action.doAction("how late is it").equals(String.valueOf(date.getTime()));
-//        assert Action.doAction("what time is it").equals(String.valueOf(date.getTime()));
-        Output.speak(Action.doAction("thank you"));
+        //System.out.println("it is " + dateFormat.format(calendar.getTime()).substring(0,2) + " hour "+dateFormat.format(calendar.getTime()).substring(3));
+        //System.out.println(Action.doAction("how late is it"));
+        assert Action.doAction("how late is it").equals("it is " + dateFormat.format(calendar.getTime()).substring(0, 2) + " hour " + dateFormat.format(calendar.getTime()).substring(3));
     }
 }
