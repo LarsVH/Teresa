@@ -3,7 +3,22 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-testCompile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
     <groupId>teresa</groupId>
     <artifactId>teresa_base</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -23,7 +38,6 @@
             <url>http://repo.spring.io/libs-milestone/</url>
         </repository>
     </repositories>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -72,24 +86,9 @@
             <version>LATEST</version>
         </dependency>
         <dependency>
-            <groupId>com.google.apis</groupId>
-            <artifactId>google-api-services-calendar</artifactId>
-            <version>v3-rev167-1.21.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openengsb.wrapped</groupId>
-            <artifactId>com.google.gdata-calendar</artifactId>
-            <version>1.41.5.w1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.cloudera.dataflow.spark</groupId>
-            <artifactId>spark-dataflow</artifactId>
-            <version>0.4.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.oauth-client</groupId>
-            <artifactId>google-oauth-client-jetty</artifactId>
-            <version>1.22.0-SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>org.springframework.aop</artifactId>
+            <version>3.2.2.RELEASE</version>
         </dependency>
     </dependencies>
 

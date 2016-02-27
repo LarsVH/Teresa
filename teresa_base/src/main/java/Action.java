@@ -1,6 +1,5 @@
 import com.eclipsesource.json.JsonObject;
 import com.github.dvdme.ForecastIOLib.ForecastIO;
-import com.google.gdata.util.ServiceException;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -100,9 +99,8 @@ public class Action {
      *
      * @return alle verjaardagen
      * @throws IOException
-     * @throws ServiceException
      */
-    public static String getBirthdays() throws IOException, ServiceException {
+    public static String getBirthdays() throws IOException {
         String out = "";
         resources = new Resources();
         HashMap<String, Calendar> map = resources.getBirthDayDatabase();
