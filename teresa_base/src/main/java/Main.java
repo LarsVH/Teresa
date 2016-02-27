@@ -16,8 +16,7 @@ public class Main {
             command = input.getCommand(true);
         }
         do {
-            if (command.contains("TERESA")) Output.speak(Action.doAction(command));
-            else Output.speak(Action.doAction(command));
+            Output.speak(Action.doAction(command));
             command = input.getCommand(true);
         } while (true);
     }

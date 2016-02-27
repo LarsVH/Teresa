@@ -7,6 +7,6 @@ public class OutputTest {
 
     @Test
     public void testSpeak() throws Exception {
-
+        Output.speak("stijn");
     }
 }

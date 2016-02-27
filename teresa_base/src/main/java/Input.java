@@ -37,8 +37,8 @@ public class Input {
         SpeechResult result;
         System.out.println("ready");
         while ((result = recognizer.getResult()) != null) {
-            System.out.format("Hypothesis: %s\n", result.getHypothesis());
-            System.out.println(result.getResult().getBestResultNoFiller());
+            //System.out.format("Hypothesis: %s\n", result.getHypothesis());
+            //System.out.println(result.getResult().getBestResultNoFiller());
             if (result.getHypothesis().contains("TERESA") || isTeresaSaid) {
                 recognizer.stopRecognition();
                 return result.getHypothesis();

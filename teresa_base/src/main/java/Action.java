@@ -8,16 +8,16 @@ import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * @author Jari Van Melckebeke
  */
 public class Action {
-    /**
-     * deze methode zorgt voor de aanmaak van bepaalde Actions na een command
-     */
-    private Action() {
 
+    private static Resources resources;
+    private static Streak streak;
+    private Action() {
     }
 
     /**
@@ -25,12 +25,14 @@ public class Action {
      *
      * @param command het commando zonder 'teresa'
      */
-    public static String doAction(String command) {
-        HashMap<String, String> questionDatabase = new Resources().getDatabase();
+    public static String doAction(String command) throws Exception {
+        resources = new Resources();
+        HashMap<String, String> questionDatabase = new Resources().getQuestionDatabase();
         String returnType = "";
-        String str = null;
+        if (command.toUpperCase().equals("TERESA")) {
+            return "yes, i am listening";
+        }
         try {
-            System.out.println(command);
             Method actionMethod = Class.forName("Action").getMethod(questionDatabase.get(command.toUpperCase()));
             return (String) actionMethod.invoke(returnType);
         } catch (NoSuchMethodException e) {
@@ -41,8 +43,16 @@ public class Action {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+        } catch (NullPointerException e) {
+            for (String say : questionDatabase.keySet()) {
+                System.out.println(say);
+                if (say.contains(command) && !(command.equals("") || command.equals(" "))) {
+                    return "Say it again";
+                }
+            }
+            return Action.doAction(new Input().getCommand(true));
         }
-        return returnType;
+        return Action.doAction(new Input().getCommand(true));
     }
 
     /**
@@ -60,26 +70,63 @@ public class Action {
     }
 
     /**
-     * deze methode zorgt ervoor dat TERESA sluit en 'youre welcome" zegt
+     * deze methode zorgt ervoor dat TERESA de context sluit
      *
      * @return niets
      * @throws Exception
      */
     public static String goodbye() throws Exception {
+        streak.close();
         Output.speak("youre welcome");
-        System.exit(0);
-        return "";
+
+        return Action.doAction(new Input().getCommand(false));
     }
 
+    /**
+     * deze methode roept het weer von het volgende uur op
+     *
+     * @return het weer van het eerstvolgende uur
+     */
     public static String showWeather() {
-        ForecastIO forecastIO = new ForecastIO("50.8767","4.0598","78d83bb68f21b2ba86082370c54f0b54");
+        ForecastIO forecastIO = new ForecastIO("50.8767", "4.0598", "78d83bb68f21b2ba86082370c54f0b54");
         JsonObject curr = forecastIO.getHourly();
         String output;
         System.out.println(curr);
         return curr.get("summary").toString();
     }
 
+    /**
+     * deze methode vraagt naar google calendars om alle verjaardagen op te lijsten
+     *
+     * @return alle verjaardagen
+     * @throws IOException
+     * @throws ServiceException
+     */
     public static String getBirthdays() throws IOException, ServiceException {
-        return "";
+        String out = "";
+        resources = new Resources();
+        HashMap<String, Calendar> map = resources.getBirthDayDatabase();
+        //System.out.println(map.get("Amber Waegeman").get(Calendar.YEAR));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMMMM");
+        Set<String> keys = map.keySet();
+        for (int i = 0; i < map.size(); i++) {
+            Calendar birthday = map.get(keys.toArray()[i]);
+            Calendar nowCal = Calendar.getInstance();
+            //System.out.println(birthday.get(Calendar.YEAR));
+            int age = nowCal.get(Calendar.YEAR) - birthday.get(Calendar.YEAR);
+            out += keys.toArray()[i] + " gets " + age +
+                    " on " + dateFormat.format(birthday.getTime()) + ".\n";
+        }
+        return out;
+    }
+
+    /**
+     * deze methode sluit TERESA volledig af
+     *
+     * @return niets
+     */
+    public static String quit() {
+        System.exit(0);
+        return null;
     }
 }

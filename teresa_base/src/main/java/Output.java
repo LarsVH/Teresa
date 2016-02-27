@@ -1,10 +1,10 @@
 import marytts.LocalMaryInterface;
 import marytts.MaryInterface;
-import marytts.modules.synthesis.Voice;
+import marytts.exceptions.MaryConfigurationException;
+import marytts.exceptions.SynthesisException;
 import marytts.util.data.audio.AudioPlayer;
 
 import javax.sound.sampled.AudioInputStream;
-import java.util.Set;
 
 /**
  * @author Jari Van Melckebeke
@@ -17,12 +17,41 @@ public class Output {
      * @throws Exception
      */
     public static void speak(String str) throws Exception {
-
         MaryInterface marytts = new LocalMaryInterface();
-        AudioInputStream audio = marytts.generateAudio(str);
+        AudioInputStream audio;
+        try {
+            audio = marytts.generateAudio(str);
+        } catch (SynthesisException e) {
+            audio = marytts.generateAudio(getSpeakable(str));
+        }
         AudioPlayer player = new AudioPlayer(audio);
         player.start();
         player.join();
+    }
+
+    /**
+     * deze methode transformeert de niet uitspreekbare delen naar "error 0 0 1"
+     *
+     * @param str de niet-uitspreekbare string
+     * @return de getransformeerde zin.
+     * @throws MaryConfigurationException
+     */
+    private static String getSpeakable(String str) throws MaryConfigurationException {
+        str = str.replace('\n', ' ');
+        String[] words = str.split(" ");
+        System.out.println(str);
+        String out = "";
+        MaryInterface marytts = new LocalMaryInterface();
+        for (String word : words) {
+            try {
+                marytts.generateAudio(word);
+                out += word + " ";
+            } catch (SynthesisException e) {
+                out += "error 0 0 1 ";
+            }
+        }
+        System.out.println(out);
+        return out;
     }
 }
 
