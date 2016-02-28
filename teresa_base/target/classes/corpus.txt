@@ -21,3 +21,5 @@ quieter
 louder
 teresa
 thank you
+next track
+previous track

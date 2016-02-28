@@ -90,6 +90,11 @@
             <artifactId>org.springframework.aop</artifactId>
             <version>3.2.2.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>javazoom</groupId>
+            <artifactId>jlayer</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
 
 

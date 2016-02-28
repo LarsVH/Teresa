@@ -69,5 +69,6 @@
     <orderEntry type="library" name="Maven: org.springframework:org.springframework.beans:3.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:com.springsource.org.apache.commons.logging:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:org.springframework.core:3.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: javazoom:jlayer:1.0.1" level="project" />
   </component>
 </module>

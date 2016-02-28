@@ -23,6 +23,9 @@ public class ActionTest {
         //System.out.println(Action.doAction("how late is it"));
         //assert Action.doAction("how late is it").equals("it is " + dateFormat.format(calendar.getTime()).substring(0, 2) + " hour " + dateFormat.format(calendar.getTime()).substring(3));
         //System.out.println(Action.doAction("list all birthdays"));
-        System.out.println(Action.doAction(" "));
+        System.out.println(Action.doAction("start track"));
+        Thread.sleep(5000);
+        System.out.println(Action.doAction("next track"));
+        Thread.sleep(10000);
     }
 }

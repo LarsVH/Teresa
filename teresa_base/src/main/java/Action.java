@@ -1,7 +1,9 @@
 import com.eclipsesource.json.JsonObject;
 import com.github.dvdme.ForecastIOLib.ForecastIO;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.advanced.AdvancedPlayer;
 
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
@@ -16,6 +18,11 @@ public class Action {
 
     private static Resources resources;
     private static Streak streak;
+    private static File musicFile;
+    private static AdvancedPlayer player;
+    private static int trackNumber = 0;
+    private static Thread musicThread = null;
+
     private Action() {
     }
 
@@ -126,5 +133,46 @@ public class Action {
     public static String quit() {
         System.exit(0);
         return null;
+    }
+
+    public static String startTrack() throws JavaLayerException, FileNotFoundException {
+        if (musicThread != null)
+            musicThread.interrupt();
+        musicThread = null;
+        musicFile = new File("~/Music/2016").listFiles()[trackNumber];
+        System.out.println(musicFile.toString());
+        FileInputStream fis = new FileInputStream(musicFile);
+        BufferedInputStream bis = new BufferedInputStream(fis);
+        player = new AdvancedPlayer(bis);
+        Runnable r = new Runnable() {
+            public void run() {
+                try {
+                    player.play();
+                } catch (JavaLayerException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        musicThread = new Thread(r);
+        musicThread.start();
+        return musicFile.getName() + " has started";
+    }
+
+    public static String stopTrack() throws FileNotFoundException, JavaLayerException, InterruptedException {
+        return musicFile.getName() + " has stopped";
+    }
+
+    public static String nextTrack() throws FileNotFoundException, JavaLayerException, InterruptedException {
+        stopTrack();
+        trackNumber++;
+        return startTrack();
+    }
+
+    public static String prevTrack() throws FileNotFoundException, JavaLayerException, InterruptedException {
+        stopTrack();
+        if (trackNumber > 0) {
+            trackNumber--;
+        }
+        return startTrack();
     }
 }
