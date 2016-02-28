@@ -67,6 +67,7 @@ public class Resources {
                 database.put(name, calendar);
             }
         } catch (SQLException e) {
+
             e.printStackTrace();
         }
         //System.out.println(database.get("Amber Waegeman"));
