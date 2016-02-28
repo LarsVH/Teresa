@@ -20,9 +20,9 @@ public class Input {
         configuration
                 .setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
         configuration
-                .setDictionaryPath(System.getProperty("user.dir") + "/src/main/resources/1318.dic");
+                .setDictionaryPath(System.getProperty("user.dir") + "/src/main/resources/3113.dic");
         configuration
-                .setLanguageModelPath(System.getProperty("user.dir") + "/src/main/resources/1318.lm");
+                .setLanguageModelPath(System.getProperty("user.dir") + "/src/main/resources/3113.lm");
         recognizer = new LiveSpeechRecognizer(configuration);
     }
 

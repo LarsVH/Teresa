@@ -7,7 +7,7 @@ public class Streak {
     ArrayList<String> summary;
 
     public Streak() {
-
+        summary = new ArrayList<>();
     }
 
     /**

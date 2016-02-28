@@ -16,8 +16,13 @@ public class Main {
             command = input.getCommand(true);
         }
         do {
+            try {
             Output.speak(Action.doAction(command));
             command = input.getCommand(true);
+            } catch (Exception e) {
+                Output.speak(e.getMessage());
+                break;
+            }
         } while (true);
     }
 }

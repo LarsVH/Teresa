@@ -1,15 +1,16 @@
 import com.eclipsesource.json.JsonObject;
 import com.github.dvdme.ForecastIOLib.ForecastIO;
-import javazoom.jl.decoder.JavaLayerException;
+import com.google.api.client.util.DateTime;
+import com.google.api.services.calendar.model.Event;
+import com.google.api.services.calendar.model.Events;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Jari Van Melckebeke
@@ -22,6 +23,7 @@ public class Action {
     private static AdvancedPlayer player;
     private static int trackNumber = 0;
     private static Thread musicThread = null;
+    private static boolean playMusic = true;
 
     private Action() {
     }
@@ -33,6 +35,7 @@ public class Action {
      */
     public static String doAction(String command) throws Exception {
         resources = new Resources();
+        streak = new Streak();
         HashMap<String, String> questionDatabase = new Resources().getQuestionDatabase();
         String returnType = "";
         if (command.toUpperCase().equals("TERESA")) {
@@ -42,13 +45,10 @@ public class Action {
             Method actionMethod = Class.forName("Action").getMethod(questionDatabase.get(command.toUpperCase()));
             return (String) actionMethod.invoke(returnType);
         } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+            Output.speak("error 0 0 2 : feature not yet implemented");
+        } catch (ClassNotFoundException ignored) {
+        } catch (InvocationTargetException | IllegalAccessException e) {
+            Output.speak("error 0 0 3: invocation error or illegal acces exception");
         } catch (NullPointerException e) {
             for (String say : questionDatabase.keySet()) {
                 System.out.println(say);
@@ -102,25 +102,25 @@ public class Action {
     }
 
     /**
-     * deze methode vraagt naar google calendars om alle verjaardagen op te lijsten
+     * deze methode vraagt naar de database om alle verjaardagen op te lijsten
      *
      * @return alle verjaardagen
      * @throws IOException
      */
-    public static String getBirthdays() throws IOException {
+    public static String getBirthdays() throws Exception {
         String out = "";
         resources = new Resources();
-        HashMap<String, Calendar> map = resources.getBirthDayDatabase();
+        Map<String, Calendar> map = resources.getBirthDayDatabase();
         //System.out.println(map.get("Amber Waegeman").get(Calendar.YEAR));
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMMMM");
         Set<String> keys = map.keySet();
         for (int i = 0; i < map.size(); i++) {
-            Calendar birthday = map.get(keys.toArray()[i]);
+            Calendar birthday = resources.getBirthDayDatabase().values().toArray(new Calendar[resources.getBirthDayDatabase().values().size()])[i];
+            //System.out.println(birthday.toString());
             Calendar nowCal = Calendar.getInstance();
             //System.out.println(birthday.get(Calendar.YEAR));
-            int age = nowCal.get(Calendar.YEAR) - birthday.get(Calendar.YEAR);
-            out += keys.toArray()[i] + " gets " + age +
-                    " on " + dateFormat.format(birthday.getTime()) + ".\n";
+            //int age = nowCal.get(Calendar.YEAR) - birthday.get(Calendar.YEAR);
+            out += keys.toArray()[i] + " ages on " + dateFormat.format(birthday.getTime()) + ".\n";
         }
         return out;
     }
@@ -132,47 +132,64 @@ public class Action {
      */
     public static String quit() {
         System.exit(0);
-        return null;
+        return "goodbye";
     }
 
-    public static String startTrack() throws JavaLayerException, FileNotFoundException {
-        if (musicThread != null)
-            musicThread.interrupt();
-        musicThread = null;
-        musicFile = new File("~/Music/2016").listFiles()[trackNumber];
-        System.out.println(musicFile.toString());
-        FileInputStream fis = new FileInputStream(musicFile);
-        BufferedInputStream bis = new BufferedInputStream(fis);
-        player = new AdvancedPlayer(bis);
-        Runnable r = new Runnable() {
-            public void run() {
-                try {
-                    player.play();
-                } catch (JavaLayerException e) {
-                    e.printStackTrace();
+
+    /**
+     * roept de eerste 10 tasks op uit de google calendar, en filterd deze als de events gelijk zijn
+     *
+     * @return tasks
+     */
+    public static String getTasks() {
+        DateTime now = new DateTime(System.currentTimeMillis());
+        String out = "";
+        try {
+            Events events = resources.getCalendar().events().list("primary")
+                    .setMaxResults(10)
+                    .setTimeMin(now)
+                    .setOrderBy("startTime")
+                    .setSingleEvents(true)
+                    .execute();
+            List<Event> items = events.getItems();
+            if (items.size() == 0) {
+                return "no upcoming events found";
+            } else {
+                for (Event event : items) {
+                    if (!out.contains(event.getSummary())) {
+                        out += event.getSummary() + ".";
+                    }
                 }
             }
-        };
-        musicThread = new Thread(r);
-        musicThread.start();
-        return musicFile.getName() + " has started";
-    }
-
-    public static String stopTrack() throws FileNotFoundException, JavaLayerException, InterruptedException {
-        return musicFile.getName() + " has stopped";
-    }
-
-    public static String nextTrack() throws FileNotFoundException, JavaLayerException, InterruptedException {
-        stopTrack();
-        trackNumber++;
-        return startTrack();
-    }
-
-    public static String prevTrack() throws FileNotFoundException, JavaLayerException, InterruptedException {
-        stopTrack();
-        if (trackNumber > 0) {
-            trackNumber--;
+        } catch (IOException e) {
+            return "input output exception in get day tasks";
         }
-        return startTrack();
+        return out;
+    }
+
+    public static String getTasks(int maxEvents) {
+        DateTime now = new DateTime(System.currentTimeMillis());
+        String out = "";
+        try {
+            Events events = resources.getCalendar().events().list("primary")
+                    .setMaxResults(maxEvents)
+                    .setTimeMin(now)
+                    .setOrderBy("startTime")
+                    .setSingleEvents(true)
+                    .execute();
+            List<Event> items = events.getItems();
+            if (items.size() == 0) {
+                return "no upcoming events found";
+            } else {
+                for (Event event : items) {
+                    if (!out.contains(event.getSummary())) {
+                        out += event.getSummary() + ".";
+                    }
+                }
+            }
+        } catch (IOException e) {
+            return "input output exception in get day tasks";
+        }
+        return out;
     }
 }
