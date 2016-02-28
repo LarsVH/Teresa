@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Teresa">
+    <output-path>$PROJECT_DIR$/out/artifacts/Teresa</output-path>
+    <root id="archive" name="Teresa.jar" />
+  </artifact>
+</component>
