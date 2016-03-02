@@ -61,6 +61,12 @@ public class Resources {
         return result;
     }
 
+    /**
+     * roept google calendar op
+     *
+     * @return google calendar
+     * @throws Exception
+     */
     private com.google.api.services.calendar.Calendar setupGoogleCalendar() throws Exception {
         final String APP_NAME = "Teresa Calendar";
         final java.io.File DATA_STORE_DIR = new File(System.getProperty("user.home"), ".credentials/calendar-teresa.json");
@@ -115,13 +121,13 @@ public class Resources {
     private Map<String, Calendar> setupBirthdays() {
         TreeMap<String, Calendar> database = new TreeMap<String, Calendar>();
         try {
-            ResultSet set = statement.executeQuery("select * from birthdays order by birthday_moth, birthday_day");
+            ResultSet set = statement.executeQuery("select * from person order by birthday_month, birthday_day");
             while (set.next()) {
                 Calendar calendar = Calendar.getInstance();
                 int day = set.getInt("birthday_day");
-                int month = set.getInt("birthday_moth");
+                int month = set.getInt("birthday_month");
                 //int year = set.getInt("birthday_year");
-                String name = set.getString("birthday_name") + " " + set.getString("birthday_surname");
+                String name = set.getString("person_name") + " " + set.getString("person_surname");
                 //calendar.set(Calendar.YEAR, year);
                 calendar.set(Calendar.MONTH, getMonth(month));
                 calendar.set(Calendar.DAY_OF_MONTH, day);

@@ -111,15 +111,10 @@ public class Action {
         String out = "";
         resources = new Resources();
         Map<String, Calendar> map = resources.getBirthDayDatabase();
-        //System.out.println(map.get("Amber Waegeman").get(Calendar.YEAR));
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMMMM");
         Set<String> keys = map.keySet();
         for (int i = 0; i < map.size(); i++) {
             Calendar birthday = resources.getBirthDayDatabase().values().toArray(new Calendar[resources.getBirthDayDatabase().values().size()])[i];
-            //System.out.println(birthday.toString());
-            Calendar nowCal = Calendar.getInstance();
-            //System.out.println(birthday.get(Calendar.YEAR));
-            //int age = nowCal.get(Calendar.YEAR) - birthday.get(Calendar.YEAR);
             out += keys.toArray()[i] + " ages on " + dateFormat.format(birthday.getTime()) + ".\n";
         }
         return out;
@@ -147,32 +142,6 @@ public class Action {
         try {
             Events events = resources.getCalendar().events().list("primary")
                     .setMaxResults(10)
-                    .setTimeMin(now)
-                    .setOrderBy("startTime")
-                    .setSingleEvents(true)
-                    .execute();
-            List<Event> items = events.getItems();
-            if (items.size() == 0) {
-                return "no upcoming events found";
-            } else {
-                for (Event event : items) {
-                    if (!out.contains(event.getSummary())) {
-                        out += event.getSummary() + ".";
-                    }
-                }
-            }
-        } catch (IOException e) {
-            return "input output exception in get day tasks";
-        }
-        return out;
-    }
-
-    public static String getTasks(int maxEvents) {
-        DateTime now = new DateTime(System.currentTimeMillis());
-        String out = "";
-        try {
-            Events events = resources.getCalendar().events().list("primary")
-                    .setMaxResults(maxEvents)
                     .setTimeMin(now)
                     .setOrderBy("startTime")
                     .setSingleEvents(true)

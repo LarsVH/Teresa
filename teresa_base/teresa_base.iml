@@ -86,5 +86,7 @@
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty:6.1.26" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty-util:6.1.26" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" level="project" />
+    <orderEntry type="library" name="Maven: hibernate-annotations:hibernate-annotations:3.3.0.GA" level="project" />
+    <orderEntry type="library" name="Maven: hibernate-commons-annotations:hibernate-commons-annotations:3.0.0.GA" level="project" />
   </component>
 </module>

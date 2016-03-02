@@ -47,7 +47,17 @@ public class Output {
                 marytts.generateAudio(word);
                 out += word + " ";
             } catch (SynthesisException e) {
-                out += "error 0 0 1 ";
+                if (word.contains("ij")) {
+                    word = word.replaceAll("ij", "ei");
+                    try {
+                        marytts.generateAudio(word);
+                        out += word + " ";
+                    } catch (SynthesisException e1) {
+                        out += "error 0 0 1";
+                    }
+                } else {
+                    out += "error 0 0 1";
+                }
             }
         }
         System.out.println(out);
