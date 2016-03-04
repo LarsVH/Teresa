@@ -161,4 +161,9 @@ public class Action {
         }
         return out;
     }
+
+    public static String getAllContacts() throws Exception {
+        ManagePerson managePerson = new ManagePerson();
+        return managePerson.listPersons();
+    }
 }

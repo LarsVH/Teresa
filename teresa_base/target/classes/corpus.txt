@@ -1,78 +1,12 @@
+Teresa
 how late is it
-what time is it
+witch time is it
+list all contacts
+list all birthdays
 start stopwatch
 stop stopwatch
-stopwatch lap
-what do I have to do
-today
-tomorrow
-monday
-tuesday
-wednesday
-thursday
-friday
-saturday
-sunday
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-0
-january
-february
-march
-april
-may
-june
-july
-august
-september
-october
-november
-december
-list all birthdays
-get notifications
-get mails
-get messages
-get tasks
+list tasks
 how is the weather
 quit
-cancel
-update
-stop track
-start track
-pause
-mute
-quieter
-louder
-teresa
 thank you
-next track
-previous track
+what do i have to do
