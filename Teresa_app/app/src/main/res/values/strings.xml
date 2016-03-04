@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Teresa</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="teresa_title">T.E.R.E.S.A.</string>
+    <string name="cancel">Cancel</string>
+</resources>
