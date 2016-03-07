@@ -1,6 +1,5 @@
 package com.jari.teresa.app;
 
-import java.io.FileWriter;
 import java.util.ArrayList;
 
 /**

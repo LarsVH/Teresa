@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Locale;
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -74,10 +75,10 @@ public class MainActivity extends Activity {
         switch (requestCode) {
             case 1:
                 if (resultCode == RESULT_OK && data != null) {
-                    Log.d("Speech", "onActivityResult: " + data.getDataString());
-                    actionManager(data.getStringExtra("SCAN_RESULT"));
+                    Log.d("Speech", "onActivityResult: " + data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS));
+                    actionManager(data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS));
                 } else {
-                    System.out.println("failure");
+                    Log.d("Speech", "data is null");
                 }
                 break;
             default:
@@ -86,7 +87,10 @@ public class MainActivity extends Activity {
         inputProvider();
     }
 
-    public void actionManager(String text) {
+    public void actionManager(ArrayList<String> text) {
+        for (String t : text) {
+            text.set(text.indexOf(t), t.toUpperCase());
+        }
         if (isTeresaSaid) {
             try {
                 Method action = database.getMethod(text);
@@ -94,20 +98,20 @@ public class MainActivity extends Activity {
                 Log.d("output", "actionManager: output = " + output);
                 textToSpeech.speak(output, TextToSpeech.QUEUE_ADD, null, null);
             } catch (NoSuchMethodException e) {
-                textToSpeech.speak("error 0 0 4 no such method exception in actionmanager in mainactivity", TextToSpeech.QUEUE_ADD, null, null);
+                textToSpeech.speak("error 0 0 4 no such method exception in action manager in main activity", TextToSpeech.QUEUE_ADD, null, null);
                 Log.d("error", "actionManager: error 004");
             } catch (ClassNotFoundException e) {
-                textToSpeech.speak("error 0 0 3 class not found in actionmanager in mainactivity", TextToSpeech.QUEUE_ADD, null, null);
+                textToSpeech.speak("error 0 0 3 class not found in action manager in main activity", TextToSpeech.QUEUE_ADD, null, null);
                 Log.d("error", "actionManager: error 004");
             } catch (InvocationTargetException e) {
-                textToSpeech.speak("error 0 0 2 invocation exception in actionmanager in mainactivity", TextToSpeech.QUEUE_ADD, null, null);
+                textToSpeech.speak("error 0 0 2 invocation exception in action manager in main activity", TextToSpeech.QUEUE_ADD, null, null);
                 Log.d("error", "actionManager: error 004");
             } catch (IllegalAccessException e) {
-                textToSpeech.speak("error 0 0 1 illegal access exception in actionmanager in mainactivity", TextToSpeech.QUEUE_ADD, null, null);
+                textToSpeech.speak("error 0 0 1 illegal access exception in action manager in main activity", TextToSpeech.QUEUE_ADD, null, null);
                 Log.d("error", "actionManager: error 004");
             }
         } else {
-            if (text.contains("teresa")) {
+            if (text.contains("TERESA")) {
                 isTeresaSaid = true;
             }
         }
@@ -115,5 +119,16 @@ public class MainActivity extends Activity {
 
     public void say(String text) {
         textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null, null);
+    }
+
+    public void createTextToSpeech() {
+        textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status != TextToSpeech.ERROR) {
+                    textToSpeech.setLanguage(Locale.US);
+                }
+            }
+        });
     }
 }

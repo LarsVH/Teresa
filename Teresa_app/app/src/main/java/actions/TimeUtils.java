@@ -13,7 +13,7 @@ import java.util.TimerTask;
  */
 public class TimeUtils {
     /**
-     * dateformat of hh mm
+     * date format of hh mm
      */
     private static SimpleDateFormat dateFormat;
 
@@ -40,7 +40,7 @@ public class TimeUtils {
     /**
      * the elapsed time in seconds for the stopwatch
      */
-    private static long epelapsedTime;
+    private static long elapsedTime;
 
 
     /**
@@ -60,11 +60,11 @@ public class TimeUtils {
     public static String getCurrentTime(String text, final MainActivity mainActivity) {
         long time = System.currentTimeMillis();
         dateFormat = new SimpleDateFormat("hh mm");
-        String[] formated = dateFormat.format(new Date(time)).split(" ");
-        if (formated[1].equals("00")) {
-            return "It is " + formated[0] + " \'o clock";
+        String[] formatted = dateFormat.format(new Date(time)).split(" ");
+        if (formatted[1].equals("00")) {
+            return "It is " + formatted[0] + " \'o clock";
         } else {
-            return "It is " + formated[0] + " hour " + formated[1];
+            return "It is " + formatted[0] + " hour " + formatted[1];
         }
     }
 
@@ -75,7 +75,6 @@ public class TimeUtils {
      * @return timer started at 'params'
      */
     public static String startTimer(String text, final MainActivity mainActivity) {
-        //verwerking van invoer
         String args = text.substring(15);
         long time = 0;
         if (args.contains("hour") || args.contains("minutes") || args.contains("seconds")) {
@@ -113,7 +112,7 @@ public class TimeUtils {
                                 mainActivity.say("Countdown: 30 seconds left");
                                 break;
                             case 15000:
-                                mainActivity.say("Countdwon: 15 seconds left");
+                                mainActivity.say("Countdown: 15 seconds left");
                                 break;
                             default:
                                 if (millis % 3600000 == 0) {
@@ -204,7 +203,7 @@ public class TimeUtils {
         stopwatch.schedule(new TimerTask() {
             @Override
             public void run() {
-                epelapsedTime += 1;
+                elapsedTime += 1;
             }
         }, 1000);
         return "stopwatch started";
@@ -219,6 +218,6 @@ public class TimeUtils {
      */
     public static String stopStopwatch(String text, final MainActivity mainActivity) {
         stopwatch.cancel();
-        return "stopwatch stopped at " + epelapsedTime + " seconds";
+        return "stopwatch stopped at " + elapsedTime + " seconds";
     }
 }
