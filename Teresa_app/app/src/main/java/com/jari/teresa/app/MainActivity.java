@@ -21,14 +21,14 @@ public class MainActivity extends Activity {
     private static final int SPEECH_RECOGNITION_CODE = 1;
     private boolean isTeresaSaid = false;
     private Streak streak = new Streak();
-    private DBHelper database;
+    private Database database;
     public TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        database = new DBHelper(getApplicationContext());
+        database = new Database(getApplicationContext());
         textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -37,7 +37,6 @@ public class MainActivity extends Activity {
                 }
             }
         });
-
         inputProvider();
     }
 
@@ -116,7 +115,6 @@ public class MainActivity extends Activity {
             }
         }
     }
-
     public void say(String text) {
         textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null, null);
     }
