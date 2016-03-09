@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -28,8 +29,9 @@ public class Database extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_DATABASE);
         db.beginTransaction();
-        db.execSQL("USE teresaDB.questions");
+        //db.execSQL("USE teresaDB.questions");
         insertValues(db);
+        db.endTransaction();
     }
 
     private void insertValues(SQLiteDatabase db) {
@@ -40,7 +42,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
     private String getSQLCommand(String question, String method, String cls) {
-        return "INSERT INTO questions(questionSentence ,questionMethod ,questionClass) VALUES(" + question + " ," + method + " ," + cls + ");";
+        return "INSERT INTO questions(questionSentence ,questionMethod ,questionClass) VALUES(\"" + question + "\" ,\"" + method + "\" ,\"" + cls + "\");";
     }
 
     @Override
@@ -49,12 +51,13 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public Method getMethod(ArrayList<String> text) throws ClassNotFoundException, NoSuchMethodException {
-        SQLiteDatabase database = getReadableDatabase();
+        SQLiteDatabase database = getWritableDatabase();
         for (String poss : text) {
             String[] arg = {poss};
             Cursor query = database.rawQuery("SELECT questionMethod, questionClass FROM questions WHERE questionSentence LIKE ?", arg);
             query.moveToFirst();
-            if (query.getCount() == 1) {
+            Log.d("DATABASE", "getMethod: getcount " + query.getCount() + " :::::getcolum " + query.getColumnCount());
+            if (query.getCount() != 0) {
                 return Class.forName(query.getString(2)).getMethod(query.getString(1), String.class, MainActivity.class);
             }
             query.close();
