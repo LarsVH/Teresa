@@ -1,4 +1,7 @@
-import org.hibernate.*;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.AnnotationConfiguration;
 
 import java.text.SimpleDateFormat;
@@ -16,7 +19,7 @@ public class ManagePerson {
         try {
             factory = new AnnotationConfiguration().configure().addAnnotatedClass(Person.class).buildSessionFactory();
         } catch (Throwable e) {
-            Output.speak("error 0 0 5 :failed to create factory object");
+            //Output.speak("error 0 0 5 :failed to create factory object");
         }
     }
 
