@@ -69,5 +69,7 @@
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.javaflacencoder:java-flac-encoder:0.3.6" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20160212" level="project" />
+    <orderEntry type="library" name="jl1.0" level="project" />
+    <orderEntry type="library" name="gtranslateapi-1.0" level="project" />
   </component>
 </module>

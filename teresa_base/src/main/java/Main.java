@@ -47,6 +47,12 @@ public class Main {
             System.out.println("Google Response: " + response.getResponse());
 
             BaseFunctions.goThroughBaseFunctions(response.getResponse());
+            if (BaseFunctions.doCancel) {
+                BaseFunctions.callForCancel();
+            }
+            if (BaseFunctions.teresaSaid) {
+
+            }
         }
 
 
@@ -56,12 +62,14 @@ public class Main {
     static class BaseFunctions {
         public static boolean doExit = false;
         private static boolean teresaSaid = false;
+        private static boolean doCancel = false;
 
         public BaseFunctions() {
 
         }
 
         public static void goThroughBaseFunctions(String response) {
+            response = response.toLowerCase();
             switch (response) {
                 case "quit":
                     doExit = true;
@@ -72,7 +80,14 @@ public class Main {
                 case "thank you":
                     teresaSaid = false;
                     break;
+                case "cancel":
+                    doCancel = true;
+                    break;
             }
+        }
+
+        public static void callForCancel() {
+
         }
     }
 }
