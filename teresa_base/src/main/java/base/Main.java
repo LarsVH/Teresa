@@ -69,8 +69,8 @@ public class Main {
             if (response.getResponse() != null) {
                 BaseFunctions.goThroughBaseFunctions(response.getResponse());
                 if (BaseFunctions.isTeresaSaid()) {
-                    if (streak.isEmpty()) loadLibraries();
-
+                    Method method = getMethod(response.getResponse());
+                    output.say(String.valueOf(method.invoke(response.getResponse())));
                 }
             }
         }
@@ -79,7 +79,7 @@ public class Main {
         file.deleteOnExit();
     }
 
-    private static void loadLibraries() throws Exception {
-        commands = manageCommand.getLibrary();
+    private static Method getMethod(String response) throws Exception {
+        return manageCommand.getMethod(response);
     }
 }

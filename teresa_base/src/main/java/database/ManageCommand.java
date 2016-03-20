@@ -7,7 +7,6 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.lang.reflect.Method;
-import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -46,24 +45,39 @@ public class ManageCommand {
     }
 
 
-    public String listCommands() {
+    public List<String> listCommands() {
         Session session = factory.openSession();
         String out = "";
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
             List commands = session.createQuery("from database.Command").list();
-            for (Iterator iterator = commands.iterator(); iterator.hasNext(); ) {
-                Command command = (Command) iterator.next();
-                out += "command: " + command.getComQuestion() + "\n";
-                out += "class: " + command.getComClass() + "\n";
-                out += "method: " + command.getComMethod() + "\n";
-            }
             tx.commit();
+            return commands;
         } catch (HibernateException e) {
             if (tx != null) tx.rollback();
-            return e.getMessage();
         }
-        return out;
+        return null;
+    }
+
+    public Method getMethod(String response) throws Exception {
+        TreeMap<String, Method> lib = getLibrary();
+        String modResponse = getClosestCommand(response);
+        for (int i = 0; i < lib.size(); i++) {
+            if (lib.keySet().contains(modResponse)) {
+                return lib.get(modResponse);
+            }
+        }
+        return null;
+    }
+
+    private String getClosestCommand(String response) {
+        List<String> commands = listCommands();
+        for (String command : commands) {
+            if (response.startsWith(response)) {
+                return command;
+            }
+        }
+        return null;
     }
 }
