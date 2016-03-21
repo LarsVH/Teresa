@@ -20,6 +20,7 @@ public class Main {
     private static ManageCommand manageCommand;
     private static ManagePerson managePerson;
     private static BaseFunctions baseFunctions;
+    private static Resources resources;
 
     /**
      * in deze methode vind de main runtime plaats.
@@ -27,6 +28,9 @@ public class Main {
      * @param args default system variables
      */
     public static void main(String[] args) throws Exception {
+        if (!new File(System.getProperty("user.dir") + "/src/main/resources/prop.xml").exists()) {
+            resources = Resources.createNew();
+        } else resources = Resources.loadLib(new File(System.getProperty("user.dir") + "/src/main/resources/prop.xml"));
         streak = new Streak();
         manageCommand = new ManageCommand();
         baseFunctions = new BaseFunctions();
