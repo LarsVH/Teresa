@@ -5,4 +5,3 @@ by communicating by speech
 
 many thanks to:
 marytts
-cmu-sphinx
