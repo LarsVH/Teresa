@@ -2,56 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7601fcf-4ea9-4cac-9956-d0d37b6dbe16" name="Default" comment="database setup changed">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_jta_1_1_spec_1_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_annotations_3_5_6_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_commons_annotations_3_2_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_1_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ManagePerson.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/hibernate.cfg.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aopalliance_com_springsource_org_aopalliance_1_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_com_springsource_org_apache_commons_logging_1_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_org_springframework_aop_3_2_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_org_springframework_beans_3_2_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_org_springframework_core_3_2_2_RELEASE.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_oauth_client_google_oauth_client_java6_1_22_0_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_oauth_client_google_oauth_client_java6_1_21_0.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_oauth_client_google_oauth_client_jetty_1_22_0_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_oauth_client_google_oauth_client_jetty_1_21_0.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_5_8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/server.log" afterPath="$PROJECT_DIR$/log/server.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Action.java" afterPath="$PROJECT_DIR$/src/main/java/Action.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Input.java" afterPath="$PROJECT_DIR$/src/main/java/Input.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Person.java" afterPath="$PROJECT_DIR$/src/main/java/Person.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/corpus.txt" afterPath="$PROJECT_DIR$/src/main/resources/corpus.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/corpus.txt" afterPath="$PROJECT_DIR$/target/classes/corpus.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/audio_converter_GUI.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/audio_converter_GUI.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/lexicon_lts_pos_builder.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/lexicon_lts_pos_builder.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/redstart.bat" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/redstart.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/redstart.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/redstart.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/transcription.bat" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/transcription.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/transcription.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/transcription.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/upgrade-marytts4-voices.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/upgrade-marytts4-voices.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/voiceimport.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/voiceimport.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_cleaning_up.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_cleaning_up.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_create_database.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_create_database.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_database_selector.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_database_selector.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_download_wikidump.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_download_wikidump.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_featuremaker.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_featuremaker.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_setup.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_setup.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_split_dump.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_split_dump.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_synthesis_script_GUI.sh" afterPath="$PROJECT_DIR$/target/classes/marytts-builder-5.1.2/bin/wkdb_synthesis_script_GUI.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teresa_base.iml" afterPath="$PROJECT_DIR$/teresa_base.iml" />
     </list>
     <ignored path="teresa_base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,9 +30,9 @@
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="131" column="35" selection-start-line="131" selection-start-column="35" selection-end-line="131" selection-end-column="35" />
+              <caret line="131" column="20" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="20" />
               <folding>
-                <marker date="1457039500574" expanded="true" signature="3337:3667" placeholder="..." />
+                <marker date="1458485093344" expanded="true" signature="4792:4806" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -113,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/hibernate.cfg.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.35027027">
-              <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -176,7 +127,6 @@
         <option value="N00bface" />
       </list>
     </option>
-    <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
@@ -221,9 +171,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="1076" />
+    <option name="y" value="24" />
     <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -447,6 +397,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -529,7 +480,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -887,12 +837,12 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="1076" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24905661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24905661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790223" sideWeight="0.502965" order="10" side_tool="true" content_ui="tabs" />
@@ -968,7 +918,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
-            <marker date="1457039500574" expanded="true" signature="3337:3667" placeholder="..." />
+            <marker date="1458485093344" expanded="true" signature="4792:4806" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1066,7 +1016,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
           <folding>
-            <marker date="1457039500574" expanded="true" signature="3337:3667" placeholder="..." />
+            <marker date="1458485093344" expanded="true" signature="4792:4806" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1132,7 +1082,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1457039500574" expanded="true" signature="3337:3667" placeholder="..." />
+            <marker date="1458485093344" expanded="true" signature="4792:4806" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1150,7 +1100,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
           <folding>
-            <marker date="1457039500574" expanded="true" signature="3337:3667" placeholder="..." />
+            <marker date="1458485093344" expanded="true" signature="4792:4806" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1200,7 +1150,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding>
-            <marker date="1457039500574" expanded="true" signature="3337:3667" placeholder="..." />
+            <marker date="1458485093344" expanded="true" signature="4792:4806" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1218,7 +1168,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding>
-            <marker date="1457039500574" expanded="true" signature="3337:3667" placeholder="..." />
+            <marker date="1458485093344" expanded="true" signature="4792:4806" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1236,7 +1186,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding>
-            <marker date="1457039500574" expanded="true" signature="3337:3667" placeholder="..." />
+            <marker date="1458485093344" expanded="true" signature="4792:4806" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1254,7 +1204,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding>
-            <marker date="1457039500574" expanded="true" signature="3337:3667" placeholder="..." />
+            <marker date="1458485093344" expanded="true" signature="4792:4806" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1381,9 +1331,9 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="131" column="35" selection-start-line="131" selection-start-column="35" selection-end-line="131" selection-end-column="35" />
+          <caret line="131" column="20" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="20" />
           <folding>
-            <marker date="1457039500574" expanded="true" signature="3337:3667" placeholder="..." />
+            <marker date="1458485093344" expanded="true" signature="4792:4806" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1399,7 +1349,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35027027">
-          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding />
         </state>
       </provider>
