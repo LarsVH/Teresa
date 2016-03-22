@@ -7,6 +7,7 @@ import com.darkprograms.speech.recognizer.GoogleResponse;
 import com.darkprograms.speech.recognizer.Recognizer;
 import database.ManageCommand;
 import database.ManagePerson;
+import database.ManageResources;
 import net.sourceforge.javaflacencoder.FLACFileWriter;
 
 import java.io.File;
@@ -18,9 +19,10 @@ public class Main {
     private static Streak streak;
     private static TreeMap<String, Method> commands;
     private static ManageCommand manageCommand;
+    private static ManageResources manageResources;
     private static ManagePerson managePerson;
     private static BaseFunctions baseFunctions;
-    private static Resources resources;
+
 
     /**
      * in deze methode vind de main runtime plaats.
@@ -28,13 +30,14 @@ public class Main {
      * @param args default system variables
      */
     public static void main(String[] args) throws Exception {
-        if (!new File(System.getProperty("user.dir") + "/src/main/resources/prop.xml").exists()) {
-            resources = Resources.createNew();
-        } else resources = Resources.loadLib(new File(System.getProperty("user.dir") + "/src/main/resources/prop.xml"));
         streak = new Streak();
+        manageResources = new ManageResources();
         manageCommand = new ManageCommand();
+        managePerson = new ManagePerson();
         baseFunctions = new BaseFunctions();
-        //managePerson = new ManagePerson();
+        if (manageResources.isEmpty()) {
+            manageResources.createNew();
+        }
         run();
     }
 

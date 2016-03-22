@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "teresaDB")
+@Table(name = "persons")
 public class Person implements java.io.Serializable {
     @Id @GeneratedValue
     @Column(name = "person_id")
