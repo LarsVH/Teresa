@@ -77,7 +77,8 @@ public class Main {
                 BaseFunctions.goThroughBaseFunctions(response.getResponse());
                 if (BaseFunctions.isTeresaSaid()) {
                     Method method = getMethod(response.getResponse());
-                    output.say(String.valueOf(method.invoke(response.getResponse())));
+                    System.out.println(method.toString());
+                    output.say((String) method.invoke(response.getResponse()));
                 }
             }
         }

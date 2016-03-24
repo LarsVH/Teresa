@@ -53,6 +53,7 @@ public class ManageCommand {
             tx = session.beginTransaction();
             List commands = session.createQuery("from database.Command").list();
             tx.commit();
+            //System.out.println(commands);
             return commands;
         } catch (HibernateException e) {
             if (tx != null) tx.rollback();
@@ -63,19 +64,27 @@ public class ManageCommand {
     public Method getMethod(String response) throws Exception {
         TreeMap<String, Method> lib = getLibrary();
         String modResponse = getClosestCommand(response);
+        //System.out.println(lib.toString());
         for (int i = 0; i < lib.size(); i++) {
-            if (lib.keySet().contains(modResponse)) {
-                return lib.get(modResponse);
+            if (modResponse != null) {
+                //System.out.println("modResponse = " + modResponse);
+                //System.out.println("lib.keySet() = " + lib.keySet());
+                if (lib.keySet().contains(modResponse)) {
+                    return lib.get(modResponse);
+                }
             }
         }
         return null;
     }
 
     private String getClosestCommand(String response) {
-        List<String> commands = listCommands();
-        for (String command : commands) {
-            if (response.startsWith(response)) {
-                return command;
+        List commands = listCommands();
+        response = response.toUpperCase();
+        //System.out.println("response = " + response);
+        for (Object command : commands) {
+            //System.out.println("command = " + ((Command) command).getComQuestion());
+            if (response.startsWith(((Command) command).getComQuestion())) {
+                return ((Command) command).getComQuestion();
             }
         }
         return null;

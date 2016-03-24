@@ -1,36 +1,40 @@
 package database;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
- * Created by jariv on 21/03/2016.
+ * @author Jari Van Melckebeke
  */
 @Entity
-@Table(name = "resources")
+@Table(name = "resources", catalog = "teresaDB")
 public class Resources {
     @Id
-    @GeneratedValue
+    @GenericGenerator(name = "gen", strategy = "increment")
+    @GeneratedValue(generator = "gen", strategy = GenerationType.IDENTITY)
     @Column(name = "res_id")
-    private int id;
+    private int resId;
 
-    @Column(name = "res_type")
+    @Column(name = "res_sort")
     private String type;
 
     @Column(name = "res_location")
     private String location;
 
-    @Column(name = "res_name")
-    private String name;
+    @JoinColumn(name = "res_music_id", foreignKey = @ForeignKey(name = "fk_resources_music1"), referencedColumnName = "music_id")
+    @Column(name = "res_music_id")
+    private int resMusicId;
 
-    @Column(name = "res_artist")
-    private String artist;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Music music;
 
-    public int getId() {
-        return id;
+    public int getResId() {
+        return resId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setResId(int resId) {
+        this.resId = resId;
     }
 
     public String getType() {
@@ -49,19 +53,19 @@ public class Resources {
         this.location = location;
     }
 
-    public String getName() {
-        return name;
+    public Music getMusic() {
+        return music;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMusic(Music music) {
+        this.music = music;
     }
 
-    public String getArtist() {
-        return artist;
+    public int getResMusicId() {
+        return resMusicId;
     }
 
-    public void setArtist(String artist) {
-        this.artist = artist;
+    public void setResMusicId(int resMusicId) {
+        this.resMusicId = resMusicId;
     }
 }
