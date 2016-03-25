@@ -1,71 +1,75 @@
 package database;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  * @author Jari Van Melckebeke
  */
 @Entity
 @Table(name = "resources", catalog = "teresaDB")
-public class Resources {
-    @Id
-    @GenericGenerator(name = "gen", strategy = "increment")
-    @GeneratedValue(generator = "gen", strategy = GenerationType.IDENTITY)
-    @Column(name = "res_id")
+public class Resources implements Serializable {
+
     private int resId;
-
-    @Column(name = "res_sort")
-    private String type;
-
-    @Column(name = "res_location")
+    private String sort;
     private String location;
-
-    @JoinColumn(name = "res_music_id", foreignKey = @ForeignKey(name = "fk_resources_music1"), referencedColumnName = "music_id")
-    @Column(name = "res_music_id")
     private int resMusicId;
-
-    @OneToOne(cascade = CascadeType.ALL)
     private Music music;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "res_id")
     public int getResId() {
         return resId;
     }
+
+    @Column(name = "res_sort")
+    public String getSort() {
+        return sort;
+    }
+
+    @Column(name = "res_location")
+    public String getLocation() {
+        return location;
+    }
+
+
+    @Column(name = "res_music_id")
+    public int getResMusicId() {
+        return resMusicId;
+    }
+
 
     public void setResId(int resId) {
         this.resId = resId;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getLocation() {
-        return location;
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 
     public void setLocation(String location) {
         this.location = location;
     }
 
-    public Music getMusic() {
-        return music;
-    }
 
     public void setMusic(Music music) {
         this.music = music;
     }
 
-    public int getResMusicId() {
-        return resMusicId;
-    }
-
     public void setResMusicId(int resMusicId) {
         this.resMusicId = resMusicId;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(new String[]{"id:" + getResId(), "sort:" + getSort(), "location:" + getLocation(), "music-id:" + getResMusicId()});
+    }
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "resources", fetch = FetchType.LAZY)
+    @JoinColumn(name = "res_music_id")
+    public Music getMusic() {
+        return music;
     }
 }

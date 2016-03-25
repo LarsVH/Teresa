@@ -34,23 +34,27 @@ public class ManageResources {
         File[] home = new File(System.getProperty("user.home")).listFiles();
         showMusicFiles(home);
         for (int i = 0; i < fileArrayList.size(); i++) {
+            transaction = session.beginTransaction();
             Resources resources = new Resources();
             Music music = new Music();
             resources.setLocation(fileArrayList.get(i).getAbsolutePath());
-            resources.setType("music");
+            resources.setSort("music");
             Mp3File mp3File = new Mp3File(fileArrayList.get(i));
             if (mp3File.getId3v2Tag() != null && mp3File.getId3v2Tag().getTitle() != null) {
                 music.setMusicAlbum(mp3File.getId3v2Tag().getAlbum());
                 music.setMusicName(mp3File.getId3v2Tag().getTitle());
                 music.setMusicArtist(mp3File.getId3v2Tag().getArtist());
                 resources.setMusic(music);
+                System.out.println("resources = " + resources.getResMusicId());
+                music.setMusicId(resources.getResMusicId());
                 music.setResources(resources);
-            }
-            if (music.getResources() != null && resources.getMusic() != null) {
+                System.out.println(music.toString());
+                System.out.println(resources.toString());
                 session.save(resources);
             }
+            transaction.commit();
         }
-        transaction.commit();
+
         session.close();
     }
 
