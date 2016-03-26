@@ -30,16 +30,16 @@ public class ManageResources {
 
     public void createNew() throws InvalidDataException, IOException, UnsupportedTagException {
         Session session = factory.openSession();
-        Transaction transaction = session.beginTransaction();
+        Transaction transaction;
         File[] home = new File(System.getProperty("user.home")).listFiles();
         showMusicFiles(home);
-        for (int i = 0; i < fileArrayList.size(); i++) {
+        for (File aFileArrayList : fileArrayList) {
             transaction = session.beginTransaction();
             Resources resources = new Resources();
             Music music = new Music();
-            resources.setLocation(fileArrayList.get(i).getAbsolutePath());
+            resources.setLocation(aFileArrayList.getAbsolutePath());
             resources.setSort("music");
-            Mp3File mp3File = new Mp3File(fileArrayList.get(i));
+            Mp3File mp3File = new Mp3File(aFileArrayList);
             if (mp3File.getId3v2Tag() != null && mp3File.getId3v2Tag().getTitle() != null) {
                 music.setMusicAlbum(mp3File.getId3v2Tag().getAlbum());
                 music.setMusicName(mp3File.getId3v2Tag().getTitle());
@@ -70,7 +70,7 @@ public class ManageResources {
             if (file.isDirectory()) {
                 //System.out.println("Directory: " + file.getName());
                 try {
-                    showMusicFiles(file.listFiles()); // Calls same method again.
+                    showMusicFiles(file.listFiles());
                 } catch (NullPointerException ignored) {
                 }
             } else {

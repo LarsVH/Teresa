@@ -68,7 +68,7 @@ public class Resources implements Serializable {
     }
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "resources", fetch = FetchType.LAZY)
-    @JoinColumn(name = "res_music_id")
+    @JoinColumn(foreignKey = @ForeignKey(name = "fk_resources_music"))
     public Music getMusic() {
         return music;
     }

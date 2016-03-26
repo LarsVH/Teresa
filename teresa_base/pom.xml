@@ -32,6 +32,15 @@
 			</plugin>
 		</plugins>
 	</build>
+	<developers>
+		<developer>
+			<roles>
+				<role>main development</role>
+			</roles>
+			<email>jarivm@outlook.com</email>
+			<name>Jari Van Melckebeke</name>
+		</developer>
+	</developers>
 	<repositories>
 		<repository>
 			<snapshots>

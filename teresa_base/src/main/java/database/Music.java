@@ -69,7 +69,7 @@ public class Music implements Serializable {
     }
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn
+    @JoinColumn(foreignKey = @ForeignKey(name = "fk_resources_music"))
     public Resources getResources() {
         return resources;
     }
